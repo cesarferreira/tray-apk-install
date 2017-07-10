@@ -61,9 +61,9 @@ function handleFileItem(item) {
   exec('adb', ['install', '-r', item], options, (err, stdout) => {
     if(err) {
       var errorMessage = 'Something went wrong while installing';
-			const merda = String(`${err}`)
-			log(merda)
-			if(merda.indexOf('no devices/emulators found') > -1) {
+			const sanitizedError = String(`${err}`)
+			log(sanitizedError)
+			if(sanitizedError.indexOf('no devices/emulators found') > -1) {
 				errorMessage = 'No devices/emulators found'
 			}
 
