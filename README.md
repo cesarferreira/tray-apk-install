@@ -2,7 +2,7 @@
 > Fastest way to install APKs
 
 <p align="center">
-<img src="extras/ss.png" width="100%" />
+<img src="extras/ss2.png" width="100%" />
 </p>
 
 [![Build Status](https://travis-ci.org/cesarferreira/tray-apk-install.svg?branch=master)](https://travis-ci.org/cesarferreira/tray-apk-install)
