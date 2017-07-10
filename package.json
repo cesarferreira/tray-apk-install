@@ -1,0 +1,24 @@
+{
+  "name": "tray-apk-install",
+  "productName": "tray-apk-install",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "author": "cesar ferreira",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager ./ --platform=darwin --arch=x64 --out=out --icon=./assets/briefcase.png --overwrite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesarferreira/tray-apk-install.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cesarferreira/tray-apk-install/issues"
+  },
+  "homepage": "https://github.com/cesarferreira/tray-apk-install#readme",
+  "devDependencies": {
+    "electron-packager": "^8.7.2",
+    "electron": "^1.6.11"
+  }
+}
