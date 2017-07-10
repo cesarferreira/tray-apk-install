@@ -5,54 +5,48 @@ const { app, Tray, Menu, dialog} = require('electron');
 const log = console.log;
 const spawn = require('child_process').spawn;
 const notifier = require('node-notifier');
-const exec = require("child_process").execFile;
+const exec = require('child_process').execFile;
 
 let tray = undefined
-
-function isAPK(file) {
-  return path.extname(file) === '.apk';
-}
-
-function notification(message) {
-  log('im opening a notification')
-  notifier.notify({
-      title: 'APK installer', 
-      message,
-			timeout: 3, 
-    }); 
-}
 
 app.dock.hide()
 
 app.on('ready', () => {
-  createTray();
+	createTray();
 });
 
 const createTray = () => {
-  tray = new Tray(path.join(assetsDirectory, 'briefcase.png'));
+	tray = new Tray(path.join(assetsDirectory, 'briefcase.png'));
+	tray.setToolTip('Drag APK to install');
 
-  tray.setToolTip('Drag APK to install');
+	var contextMenu = Menu.buildFromTemplate([
+		{
+			label: 'quit', click: () => {
+				app.isQuiting = true;
+				app.quit();
+			}
+	}]);
 
-  tray.on('drag-enter', () => {
-    tray.setImage(path.join(assetsDirectory, 'briefcase-yellow.png'))
-  });
+	tray.setContextMenu(contextMenu);
 
-  tray.on('drag-leave', () => {
-    tray.setImage(path.join(assetsDirectory, 'briefcase.png'))
-  });
+	tray.on('drag-enter', () => {
+		tray.setImage(path.join(assetsDirectory, 'briefcase-yellow.png'));
+	});
 
-	tray.on('click', () => {
-    notification('Cesar loves you ❤');
-  });
+	tray.on('drag-leave', () => {
+		tray.setImage(path.join(assetsDirectory, 'briefcase.png'));
+	});
 
-  tray.on('drop-files', (event, files) => {
+	tray.on('right-click', () => {
+		notification('Cesar loves you ❤');
+	});
 
-    tray.setImage(path.join(assetsDirectory, 'briefcase.png'))
-
-    files.forEach(item => {
-      handleFileItem(item);
-    });    
-  });
+	tray.on('drop-files', (event, files) => {
+		tray.setImage(path.join(assetsDirectory, 'briefcase.png'))
+		files.forEach(item => {
+			handleFileItem(item);
+		});    
+});
 }
 
 function handleFileItem(item) {
@@ -70,4 +64,16 @@ function handleFileItem(item) {
     }
     notification('Installed successfully');
   });
+}
+
+function isAPK(file) {
+  return path.extname(file) === '.apk';
+}
+
+function notification(message) {
+  notifier.notify({
+      title: 'APK installer', 
+      message,
+			timeout: 3, 
+    }); 
 }
