@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "license": "MIT",
-  "author": "cesar ferreira",
+  "author": "Cesar Ferreira",
   "scripts": {
     "start": "electron .",
     "package": "electron-packager ./ --platform=darwin --arch=x64 --out=out --icon=./assets/briefcase.png --overwrite"
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/cesarferreira/tray-apk-install#readme",
   "devDependencies": {
-    "electron-packager": "^8.7.2",
-    "electron": "^1.6.11"
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.2"
+  },
+  "dependencies": {
+    "node-notifier": "^5.1.2"
   }
 }
