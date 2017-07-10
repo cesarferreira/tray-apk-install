@@ -1,7 +1,7 @@
 {
   "name": "tray-apk-install",
   "productName": "tray-apk-install",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "main.js",
   "license": "MIT",
   "author": "Cesar Ferreira",
