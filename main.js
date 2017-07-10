@@ -56,10 +56,18 @@ function handleFileItem(item) {
   }
 
   log('Starting installation...');
-  exec('adb', ['install', '-r', item], (error, stdout) => {
-    if(error) {
-      log(error);
-      notification('Something went wrong, please read the logs');
+	const options = { timeout: 4000 };
+
+  exec('adb', ['install', '-r', item], options, (err, stdout) => {
+    if(err) {
+      var errorMessage = 'Something went wrong while installing';
+			const merda = String(`${err}`)
+			log(merda)
+			if(merda.indexOf('no devices/emulators found') > -1) {
+				errorMessage = 'No devices/emulators found'
+			}
+
+      notification(errorMessage);
       return;
     }
     notification('Installed successfully');
