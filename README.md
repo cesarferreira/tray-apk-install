@@ -19,6 +19,11 @@ $ npm install -g tray-apk-install
 
 Drag any `apk` file to the icon in the tray.
 
+<p align="center">
+<img src="extras/ss3.png" width="100%" />
+</p>
+
+
 ## Created by
 [Cesar Ferreira](https://cesarferreira.com)
 

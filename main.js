@@ -70,7 +70,7 @@ function handleFileItem(item) {
       notification(errorMessage);
       return;
     }
-    notification('Installed successfully');
+    notification(`${path.basename(item)} - Installed successfully`);
   });
 }
 
