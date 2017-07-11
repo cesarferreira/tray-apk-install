@@ -11,8 +11,13 @@
 
 ## Install
 
+```bash
+git clone https://github.com/cesarferreira/tray-apk-install && cd tray-apk-install && yarn
 ```
-$ npm install -g tray-apk-install
+
+## Run
+```bash
+npm start
 ```
 
 ## Usage
@@ -23,6 +28,11 @@ Drag any `apk` file to the icon in the tray.
 <img src="extras/usage.gif" width="100%" />
 </p>
 
+## Works on
+`macOS`, `windows` & `linux`
+
+## Caveats
+I can't package it as an Application because there's an issue while loading `node-notifier`, read more [here](https://www.npmjs.com/package/node-notifier#within-electron-packaging)
 
 ## Created by
 [Cesar Ferreira](https://cesarferreira.com)
