@@ -2,7 +2,7 @@
 > Fastest way to install APKs
 
 <p align="center">
-<img src="extras/ss2.png" width="100%" />
+<img src="extras/usage.gif" width="100%" />
 </p>
 
 [![Build Status](https://travis-ci.org/cesarferreira/tray-apk-install.svg?branch=master)](https://travis-ci.org/cesarferreira/tray-apk-install)
@@ -17,7 +17,7 @@ $ npm install -g tray-apk-install
 
 ## Usage
 
-insert gif
+Drag any `apk` file to the icon in the tray.
 
 ## Created by
 [Cesar Ferreira](https://cesarferreira.com)
